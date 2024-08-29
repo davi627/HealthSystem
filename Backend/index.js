@@ -21,7 +21,50 @@ app.use(cors({
 app.use(cookieParser());
 
 // Admin routes
-app.use('/Backend/admin', adminRoutes);
+app.use('/admin', adminRoutes);
+
+// Temporary route to check admin data
+app.get('/check-admin', async (req, res) => {
+  try {
+    const admin = await Admin.findOne({ email: 'davidmbita001@gmail.com' });
+    if (admin) {
+      res.json({
+        message: 'Admin found',
+        adminData: {
+          email: admin.email,
+          passwordHash: admin.password,
+          role: admin.role
+        }
+      });
+    } else {
+      res.status(404).json({ message: 'Admin not found' });
+    }
+  } catch (error) {
+    console.error('Error checking admin:', error);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
+// Temporary route to reset admin password
+app.post('/reset-admin-password', async (req, res) => {
+  try {
+    const adminEmail = 'davidmbita001@gmail.com';
+    const newPassword = 'Jamadova1234';
+
+    // Find the admin and update the password directly
+    const result = await Admin.findOne({ email: adminEmail });
+    if (result) {
+      result.password = newPassword; // Set the new plain password
+      await result.save(); // Save to trigger hashing
+      res.json({ message: 'Admin password reset successfully' });
+    } else {
+      res.status(404).json({ message: 'Admin not found' });
+    }
+  } catch (error) {
+    console.error('Error resetting admin password:', error);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
 
 mongoose.connect(process.env.MONGO_URI)
   .then(async () => {
@@ -31,11 +74,16 @@ mongoose.connect(process.env.MONGO_URI)
     const adminEmail = 'davidmbita001@gmail.com';
     const adminPassword = 'Jamadova1234';
     
-    const existingAdmin = await Admin.findOne({ email: adminEmail });
-    if (!existingAdmin) {
-      const hashedPassword = await bcrypt.hash(adminPassword, 10);
-      await Admin.create({ email: adminEmail, password: hashedPassword, role: 'admin' });
-      console.log('Default admin user created');
+    try {
+      const existingAdmin = await Admin.findOne({ email: adminEmail });
+      if (!existingAdmin) {
+        const newAdmin = await Admin.create({ email: adminEmail, password: adminPassword, role: 'admin' });
+        console.log('Default admin user created:', newAdmin);
+      } else {
+
+      }
+    } catch (error) {
+      console.error('Error during admin creation/check:', error);
     }
     
     app.listen(process.env.PORT, () => {
@@ -43,5 +91,5 @@ mongoose.connect(process.env.MONGO_URI)
     });
   })
   .catch((err) => {
-    console.log('Error connecting to db: ' + err);
+    console.error('Error connecting to db:', err);
   });

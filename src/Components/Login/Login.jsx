@@ -14,7 +14,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        'http://localhost:3000/Backend/admin/login',
+        'http://localhost:3000/admin/login',
         { email, password },
         { withCredentials: true }
       );
