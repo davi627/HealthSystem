@@ -1,0 +1,100 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: white;
+  height: 100vh;
+}
+
+/* Main container holding both the logo and form side by side */
+.login-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Container for the health system text on the left */
+.health-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  font-size: 24px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Container for the form on the right */
+.form-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 50px;
+  box-sizing: border-box;
+}
+
+.logo {
+  margin-bottom: 30px; /* Space between logo and form */
+}
+
+.heading {
+  margin-bottom: 30px;
+  color: #333;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.label {
+  margin-bottom: 10px;
+  color: black;
+  font-size: 16px;
+  align-self: flex-start;
+}
+
+.input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.submitButton {
+  width: 70%;
+  padding: 12px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+  margin-bottom: 10px;
+  margin-left: 60px;
+}
+
+.submitButton:hover {
+  background-color: #0056b3;
+}
+
+.linkContainer {
+  margin-top: 10px;
+}
+
+.link {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
