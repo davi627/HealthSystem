@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import adminRoutes from './Routes/Admin.js'
+import UserRoutes from './Routes/User.js'
 import Admin from './models/Admin.js';
 import bcrypt from 'bcryptjs';
 
@@ -20,8 +21,9 @@ app.use(cors({
 }));
 app.use(cookieParser());
 
-// Admin routes
+//  routes
 app.use('/admin', adminRoutes);
+app.use('/user', UserRoutes);
 
 // Temporary route to check admin data
 app.get('/check-admin', async (req, res) => {

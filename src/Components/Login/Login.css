@@ -98,3 +98,53 @@ body {
 .link:hover {
   text-decoration: underline;
 }
+/* Admin and User Login Button Styles */
+div button {
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px;
+  margin-right: 10px;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+/* Admin Button (blue) */
+div button.active {
+  background-color: #007bff;
+  color: white;
+}
+
+div button.active:hover {
+  background-color: #0056b3;
+}
+
+/* User Button (dark brown) */
+div button:not(.active) {
+  background-color: brown; /* Dark brown */
+  color: white;
+}
+
+div button:not(.active):hover {
+  background-color: brown; /* Darker brown on hover */
+}
+
+/* Login Button (blue) */
+button[type='submit'] {
+  width: 70%;
+  padding: 12px;
+  background-color: #007bff; /* Blue */
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+  margin-bottom: 10px;
+  margin-left: 40px;
+  margin-top: 20px;
+}
+
+button[type='submit']:hover {
+  background-color: #0056b3;
+}
