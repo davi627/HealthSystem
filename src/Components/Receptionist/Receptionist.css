@@ -1,0 +1,138 @@
+/* Receptionist Container */
+.receptionist-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Topbar styles */
+.receptionist-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #42a5f5; /* Light background for the top bar */
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow under the top bar */
+  height: 100px;
+}
+
+.receptionist-logo {
+  height: 100px;
+  width: auto;
+}
+
+/* Main area layout */
+.receptionist-main {
+  display: flex;
+  flex: 1;
+}
+
+/* Sidebar styles */
+.receptionist-sidebar {
+  width: 250px;
+  background-color: #007bff; /* Blue background for the sidebar */
+  display: flex;
+  flex-direction: column;
+}
+
+.receptionist-menu-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.receptionist-menu-list li {
+  padding: 15px 20px;
+  background-color: #007bff;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover effect for menu items */
+.receptionist-menu-list li:hover {
+  background-color: #0056b3;
+  color: #fff;
+}
+
+/* Content area */
+.receptionist-content {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: #f8f9fa; /* Light background for the content area */
+}
+
+/* Form styles */
+.patient-registration-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.form-group {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.form-group:last-child {
+  margin-right: 0;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 70%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Button styles */
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.patient-registration-form .btn-submit {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 25%;
+}
+
+.patient-registration-form .btn-reset {
+  background-color: brown;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 18px;
+  margin-right: 250px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  height: 45px;
+  width: 25%;
+}
+
+.patient-registration-form .btn-submit:hover,
+.patient-registration-form .btn-reset:hover {
+  opacity: 0.9;
+}

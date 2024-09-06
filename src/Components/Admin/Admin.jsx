@@ -20,17 +20,17 @@ const Admin = () => {
   const [selectedRole, setSelectedRole] = useState('Receptionist');
   const [formData, setFormData] = useState({
     fullName: '',
-    gender: 'Male', // Initialize with a default value
+    gender: 'Male',
     phoneNumber: '',
     email: '',
     employerId: '',
     password: '',
-    role: 'Receptionist', // Initialize with a default role
+    role: 'Receptionist',
   });
 
   const handleRoleClick = (role) => {
     setSelectedRole(role);
-    setFormData({ ...formData, role }); // Update the role in formData
+    setFormData({ ...formData, role });
   };
 
   const handleInputChange = (e) => {
