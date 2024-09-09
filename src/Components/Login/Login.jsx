@@ -52,7 +52,7 @@ const Login = () => {
         case 'Accountant':
           navigate('/accounts');
           break;
-        case 'Lab Technician':
+        case 'Laboratory':
           navigate('/labtech');
           break;
         default:
@@ -127,7 +127,7 @@ const Login = () => {
                 <option value="Doctor">Doctor</option>
                 <option value="Pharmacist">Pharmacist</option>
                 <option value="Accountant">Accountant</option>
-                <option value="Lab Technician">Lab Technician</option>
+                <option value="Laboratory">Laboratory</option>
               </select>
               <br />
             </>

@@ -11,6 +11,7 @@ body {
   display: flex;
   width: 100vw;
   height: 100vh;
+  flex-direction: row;
 }
 
 /* Container for the health system text on the left */
@@ -39,17 +40,13 @@ body {
   box-sizing: border-box;
 }
 
+/* Logo styling */
 .logo {
   margin-bottom: 30px; /* Space between logo and form */
+  max-width: 100%; /* Ensure the logo scales down if needed */
 }
 
-.heading {
-  margin-bottom: 30px;
-  color: #333;
-  font-size: 28px;
-  font-weight: bold;
-}
-
+/* Label and input styles */
 .label {
   margin-bottom: 10px;
   color: black;
@@ -67,6 +64,7 @@ body {
   box-sizing: border-box;
 }
 
+/* Submit button styles */
 .submitButton {
   width: 70%;
   padding: 12px;
@@ -85,6 +83,7 @@ body {
   background-color: #0056b3;
 }
 
+/* Link container styles */
 .linkContainer {
   margin-top: 10px;
 }
@@ -98,6 +97,7 @@ body {
 .link:hover {
   text-decoration: underline;
 }
+
 /* Admin and User Login Button Styles */
 div button {
   padding: 12px 20px;
@@ -147,4 +147,50 @@ button[type='submit'] {
 
 button[type='submit']:hover {
   background-color: #0056b3;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .health-container,
+  .form-container {
+    width: 100%;
+    height: auto;
+  }
+
+  .form-container {
+    padding: 20px;
+  }
+
+  .logo {
+    width: 80%;
+    height: auto;
+  }
+
+  .submitButton,
+  button[type='submit'] {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .label,
+  .input {
+    font-size: 14px;
+  }
+
+  .submitButton,
+  button[type='submit'] {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  div button {
+    font-size: 16px;
+    padding: 10px 15px;
+  }
 }

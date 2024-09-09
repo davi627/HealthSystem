@@ -1,0 +1,56 @@
+/* LabTech.css */
+
+/* Container for the whole layout */
+.labtech-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Top bar styling */
+.top-bar {
+  display: flex;
+  align-items: center;
+  background-color: #007bff; /* Blue color */
+  padding: 10px 20px;
+  color: white;
+}
+
+.logo {
+  height: 40px; /* Adjust the logo size as needed */
+  width: auto;
+}
+
+/* Sidebar styling */
+.sidebar {
+  background-color: #007bff; /* Blue color */
+  color: white;
+  width: 250px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.sidebar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-list li {
+  padding: 15px;
+  cursor: pointer;
+  border-bottom: 1px solid #0056b3; /* Darker blue for separation */
+}
+
+.sidebar-list li:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Main content styling */
+.main-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #f9f9f9; /* Light background for the main content */
+}
