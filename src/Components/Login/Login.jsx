@@ -69,7 +69,7 @@ const Login = () => {
         <p>Hospital Processes Automation System</p>
       </div>
       <div className="form-container">
-        <img src={logo} alt="Logo" className="logo" height="40%" width="40%" />
+        <img src={logo} alt="Logo" className="logo" />
         <form className="form" onSubmit={handleSubmit}>
           <label htmlFor="email" className="label">
             <i>

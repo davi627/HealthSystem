@@ -35,7 +35,7 @@
   padding: 40px 20px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   position: fixed;
-  top: 60px; /* Adjusted to account for the top bar */
+  top: 60px;
 }
 
 /* Styles for the unordered list */

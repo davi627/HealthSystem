@@ -42,8 +42,8 @@ body {
 
 /* Logo styling */
 .logo {
-  margin-bottom: 30px; /* Space between logo and form */
-  max-width: 100%; /* Ensure the logo scales down if needed */
+  margin-bottom: 30px;
+  max-width: 100%;
 }
 
 /* Label and input styles */
@@ -57,7 +57,7 @@ body {
 .input {
   width: 100%;
   padding: 12px;
-  margin-bottom: 20px;
+  margin-bottom: -35px;
   border-radius: 6px;
   border: 1px solid #ccc;
   font-size: 16px;
