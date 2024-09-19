@@ -26,8 +26,10 @@ export const loginAdmin = async (req, res) => {
   
       // If we get here, login was successful
       const token = jwt.sign({ id: admin._id }, process.env.JWT_SECRET, { expiresIn: '1d' });
-      res.cookie('token', token, { httpOnly: true, maxAge: 24 * 60 * 60 * 1000 });
-      res.json({ message: 'Logged in successfully', admin: { id: admin._id, email: admin.email, role: admin.role } });
+      res
+        .status(200)
+        .cookie('admintoken', token, { httpOnly: true, maxAge: 24 * 60 * 60 * 1000 })
+        .json({ message: 'Logged in successfully', admin: { id: admin._id, email: admin.email, role: admin.role } });
   
     } catch (error) {
       console.error('Server error during login:', error);
@@ -36,7 +38,7 @@ export const loginAdmin = async (req, res) => {
   };
 
 export const logoutAdmin = (req, res) => {
-  res.clearCookie('token');
+  res.clearCookie('admintoken');
   res.json({ message: 'Logged out successfully' });
 };
 

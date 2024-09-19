@@ -13,7 +13,8 @@ const UserSchema = new mongoose.Schema({
     enum: ['Receptionist', 'Nurse', 'Doctor', 'Pharmacist', 'Accountant', 'Kitchen Staff', 'Laboratory'], 
     required: true 
   },
-  createdAt: { type: Date, default: Date.now },
+  active: { type: Boolean, default: true }, 
+  createdAt: { type: Date, default: Date.now }
 });
 
 

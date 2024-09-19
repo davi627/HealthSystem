@@ -1,3 +1,4 @@
+/* Top bar styles */
 .topbar {
   width: 100%;
   height: 110px;
@@ -5,18 +6,19 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 20px;
+  padding: 20px;
   position: fixed;
   top: 0;
   left: 0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 1000;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
 /* Logo styles */
 .logo img {
-  padding-top: 35px;
-  padding-right: 0;
+  height: 60px;
+  padding-top: 15px;
 }
 
 /* Search bar styles */
@@ -25,58 +27,58 @@
   padding: 8px 10px;
   border-radius: 5px;
   border: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Adjust the sidebar to account for the top bar */
+/* Sidebar adjusted to account for the top bar */
 .sidebar {
   width: 250px;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 110px);
   background-color: #2196f3;
   padding: 40px 20px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   position: fixed;
-  top: 60px;
+  top: 110px;
+  left: 0;
+  z-index: 999;
 }
 
-/* Styles for the unordered list */
+/* Sidebar list styles */
 .sidebar ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-/* Styles for the list items */
 .sidebar ul li {
   display: flex;
   align-items: center;
-  padding: 20px 0;
+  padding: 15px 0;
   font-size: 18px;
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-/* Icon spacing */
 .sidebar ul li i {
   margin-right: 15px;
   font-size: 20px;
   color: white;
 }
 
-/* Hover effect */
+/* Sidebar hover effect */
 .sidebar ul li:hover {
-  background-color: rgb(138, 138, 144);
+  background-color: #1e88e5;
   border-radius: 5px;
 }
 
-/* Example active list item */
 .sidebar ul li.active {
   background-color: #0056b3;
   color: white;
   border-radius: 5px;
 }
 
-/* Styles for the content area */
+/* Content area adjusted to fit below top bar */
 .content {
   margin-left: 250px;
   padding: 20px;
@@ -85,19 +87,19 @@
   margin-top: 110px;
 }
 
-/* Styles for the form */
+/* Form styles */
 .user-form {
   background-color: white;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   max-width: 900px;
-  margin: 0 auto;
-  height: 600px;
+  margin: 20px auto;
+  height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 20px; /* Add gap to space out the form rows */
+  justify-content: center;
+  gap: 20px;
 }
 
 .user-form h2 {
@@ -108,8 +110,8 @@
 .user-form .form-row {
   display: flex;
   justify-content: space-between;
-  flex-grow: 1;
-  gap: 30px; /* Increase gap between form groups */
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
 .user-form .form-group {
@@ -119,17 +121,13 @@
   justify-content: center;
 }
 
-.user-form label {
-  display: block;
-  margin-bottom: 5px;
-}
-
 .user-form input,
 .user-form select {
   width: 100%;
   padding: 12px;
   border-radius: 5px;
   border: 1px solid #ccc;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .user-form button {
@@ -140,10 +138,124 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: 40px;
-  margin-left: 250px;
+  align-self: center;
+  margin-top: 20px;
 }
 
 .user-form button:hover {
   background-color: #1e88e5;
+}
+
+/* User List styles */
+.user-list {
+  margin-left: 250px;
+}
+
+.user-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.user-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.user-list li span {
+  flex-grow: 1;
+}
+
+.user-list .btn {
+  margin-left: 100px;
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.user-list .btn:hover {
+  background-color: brown;
+}
+
+/* Responsive adjustments using media queries */
+@media (max-width: 768px) {
+  /* Adjust sidebar width and content margin */
+  .sidebar {
+    width: 200px;
+  }
+
+  .content {
+    margin-left: 200px;
+  }
+
+  /* Adjust form layout */
+  .user-form .form-group {
+    width: 100%;
+  }
+
+  /* Make search bar and logo stack vertically */
+  .topbar {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  .logo img {
+    height: 50px;
+  }
+
+  .search-bar input {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  /* Sidebar list text size */
+  .sidebar ul li {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Hide the sidebar on very small screens */
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 0;
+  }
+
+  .content {
+    margin-left: 0;
+  }
+
+  /* Form responsive adjustments */
+  .user-form {
+    padding: 10px;
+  }
+
+  /* Logo and search bar further adjustments */
+  .topbar {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  .logo img {
+    height: 40px;
+  }
+
+  .search-bar input {
+    width: 100%;
+    margin-top: 5px;
+  }
+
+  /* Button responsiveness */
+  .user-form button {
+    width: 80%;
+  }
 }

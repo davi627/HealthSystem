@@ -288,6 +288,10 @@ const DoctorsPage = () => {
                 <p>
                   <strong>Details:</strong> {selectedAppointment.details}
                 </p>
+                <button className="cancel-btn">Cancel Appointment</button>
+                <button className="reschedule-btn">
+                  Reschedule Appointment
+                </button>
               </div>
             )}
           </div>
